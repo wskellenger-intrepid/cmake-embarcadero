@@ -100,8 +100,8 @@ set(CMAKE_LINK_GROUP_USING_RESCAN_SUPPORTED TRUE)
 macro(__windows_compiler_gnu lang)
 
   # Create archiving rules to support large object file lists for static libraries.
-  set(CMAKE_${lang}_ARCHIVE_CREATE "<CMAKE_AR> qc <TARGET> <LINK_FLAGS> <OBJECTS>")
-  set(CMAKE_${lang}_ARCHIVE_APPEND "<CMAKE_AR> q <TARGET> <LINK_FLAGS> <OBJECTS>")
+  set(CMAKE_${lang}_ARCHIVE_CREATE "<CMAKE_AR> rcs <TARGET> <LINK_FLAGS> <OBJECTS>")
+  set(CMAKE_${lang}_ARCHIVE_APPEND "<CMAKE_AR> r <TARGET> <LINK_FLAGS> <OBJECTS>")
   set(CMAKE_${lang}_ARCHIVE_FINISH "<CMAKE_RANLIB> <TARGET>")
 
   # Initialize C link type selection flags.  These flags are used when
@@ -177,7 +177,7 @@ macro(__windows_compiler_gnu lang)
         CMAKE_${lang}_${rule} "${CMAKE_${lang}_${rule}}")
       set(CMAKE_${lang}_${rule}
         "<CMAKE_COMMAND> -E rm -f <OBJECT_DIR>/objects.a"
-        "<CMAKE_AR> qc <OBJECT_DIR>/objects.a <OBJECTS>"
+        "<CMAKE_AR> rcs <OBJECT_DIR>/objects.a <OBJECTS>"
         "${CMAKE_${lang}_${rule}}"
         )
     endforeach()
