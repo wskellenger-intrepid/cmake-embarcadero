@@ -1,0 +1,2 @@
+This is a special build of CMake 3.30 built by Embarcadero containing patches
+to support the C++ Modern 64-bit toolchain.
