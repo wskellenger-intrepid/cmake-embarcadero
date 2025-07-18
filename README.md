@@ -1,6 +1,8 @@
 # cmake-embarcadero
 Fork of CMake 3.30 for RadStudio 12.x
 
+This is not CMake source code!  These are Windows CMake binaries!
+
 When you install CMake using GetIt, this is what you get.  
 I copied the files from `Documents\Embarcadero\Studio\23.0\CatalogRepository\CMake-3.30` and made this repo with them.
 
