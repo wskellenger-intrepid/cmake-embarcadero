@@ -30,7 +30,6 @@ else()
 
   macro(__compiler_clang lang)
     if("x${CMAKE_${lang}_SIMULATE_ID}" STREQUAL "xEMBT")
-      string(APPEND CMAKE_${lang}_FLAGS_INIT " -q")
       if(WIN32 AND NOT CMAKE_RC_COMPILER_INIT AND NOT CMAKE_GENERATOR_RC)
         set(CMAKE_RC_COMPILER_INIT ${EMBT_DRIVER_NAME}-windres)
       endif()
